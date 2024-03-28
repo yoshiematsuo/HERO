@@ -35,10 +35,17 @@
   <!-- Hero Section -->
 
     <!-- <model-viewer> HTML element -->
-    <model-viewer id="Box002"src="test_box_4_bld.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" ar alt="A 3D model of a BOX">
+
+    <model-viewer id="Box001"src="test_box_4_bld.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" ar alt="A 3D model of a BOX">
   <div class="controls">
     <div><p>カラー: <select id="variant"></select></div>
   </div>
+
+ <model-viewer id="Box002"src="test_box_4_bld.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" ar alt="A 3D model of a BOX">
+  <div class="controls">
+    <div><p>カラー: <select id="variant"></select></div>
+  </div>
+
       <button slot="ar-button" id="ar-button">
           3D-AR表示
       </button>
@@ -49,6 +56,7 @@
     </model-viewer>  
 
 <script>
+const modelViewerVariants = document.querySelector("model-viewer#Box001");
 const modelViewerVariants = document.querySelector("model-viewer#Box002");
 const select = document.querySelector('#variant');
 
@@ -75,22 +83,7 @@ select.addEventListener('input', (event) => {
      </script>
 
 
-  <div class="dropdown show"> 
-　　　<a class="btn btn-lg dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 上のボックスカラー </a>
 
-<select id="variant"></select>
-
-  </div>
-
-  <div class="dropdown show">
-　　 <a class="btn btn-lg dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  下のボックスカラー </a>
-    <div class="dropdown-menu">
-      <h6 class="dropdown-header">Dropdown header 1</h6>
-      <a class="dropdown-item" href="#">First Link</a> 
-　　　<a class="dropdown-item disabled" href="#" >Disabled Link</a> 
-　　　<a class="dropdown-item" href="#">Something else here</a>
-　　 </div>
-  </div>
 
   <!-- About Section -->
   <section class="about" id="about">
