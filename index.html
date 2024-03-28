@@ -37,6 +37,48 @@
     <h2 class="hero_header">HERO <span class="light">LIGHT</span></h2>
     <p class="tagline">Light is a simple one page website</p>
   </section>
+
+    <!-- <model-viewer> HTML element -->
+    <model-viewer id="Box002"src="test_box_4_bld.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp" shadow-intensity="1" ar alt="A 3D model of a BOX">
+  <div class="controls">
+    <div><p>カラー: <select id="variant"></select></div>
+  </div>
+      <button slot="ar-button" id="ar-button">
+          3D-AR表示
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+
+    </model-viewer>  
+
+<script>
+const modelViewerVariants = document.querySelector("model-viewer#Box002");
+const select = document.querySelector('#variant');
+
+modelViewerVariants.addEventListener('load', () => {
+  const names = modelViewerVariants.availableVariants;
+  for (const name of names) {
+    const option = document.createElement('option');
+    option.value = name;
+    option.textContent = name;
+    select.appendChild(option);
+  }
+  // Adds a default option.
+
+});
+
+select.addEventListener('input', (event) => {
+  modelViewerVariants.variantName = event.target.value === 'default' ? null : event.target.value;
+});
+</script>    
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js">
+     </script>
+
+
   <div class="dropdown show"> <a class="btn btn-lg dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Large Button1 </a>
     <div class="dropdown-menu">
       <h6 class="dropdown-header">Dropdown header 1</h6>
@@ -44,6 +86,7 @@
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#">Seperated Link</a> </div>
   </div>
+
   <div class="dropdown show"> <a class="btn btn-lg dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Large Button2 </a>
     <div class="dropdown-menu">
       <h6 class="dropdown-header">Dropdown header 1</h6>
